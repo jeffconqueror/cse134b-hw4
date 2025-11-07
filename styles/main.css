@@ -1,0 +1,421 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    
+    --font-main: 'Inter', -apple-system, system-ui, sans-serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
+}
+
+/* Dark mode variables (2nd context) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #ecf0f1;
+        --text-color: #ecf0f1;
+        --bg-color: #1a1a1a;
+        --card-bg: #2c2c2c;
+    }
+}
+
+/* ========== CUSTOM FONTS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* ========== BASE STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    /* USE COLOR-MIX HERE - mix primary with black for darker nav */
+    background-color: color-mix(in srgb, var(--primary-color), black 15%);
+    padding: var(--spacing-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    & ul {
+        display: flex;
+        gap: var(--spacing-md);
+        list-style: none;
+        flex-wrap: wrap;
+        
+        & li {
+            & a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em;
+                border-radius: 0.25rem;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    /* USE COLOR-MIX for hover - mix secondary with white */
+                    background-color: color-mix(in srgb, var(--secondary-color), white 20%);
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+}
+
+/* ========== HEADER (Same for all pages) ========== */
+header {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(135deg, 
+        var(--primary-color), 
+        color-mix(in srgb, var(--secondary-color), var(--accent-color) 30%)
+    );
+    color: white;
+    width: 100dvw;
+    margin-left: calc(50% - 50dvw);
+    
+    & h1 {
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+    & p {
+        font-size: 0.95rem;
+        opacity: 0.85;
+        margin-top: 0.25rem;
+    }
+}
+
+/* ========== NAVIGATION (Same for all pages) ========== */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: var(--spacing-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    & ul {
+        display: flex;
+        gap: var(--spacing-md);
+        list-style: none;
+        flex-wrap: wrap;
+        
+        & li {
+            & a {
+                color: white;
+                text-decoration: none;
+                padding: 0.5em 1em;
+                border-radius: 0.25rem;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background-color: var(--secondary-color);
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+}
+
+/* ========== FOOTER (Same for all pages) ========== */
+footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: var(--spacing-lg);
+    
+    & a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* ========== COMMON TYPOGRAPHY ========== */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1em;
+    line-height: 1.8em;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== :HAS() SELECTOR - Baseline 2024 ========== */
+article:has(img) {
+    border-left: 4px solid var(--accent-color);
+}
+
+/* ========== RESPONSIVE (Common) ========== */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+    
+    header {
+        min-height: 20dvh;
+        padding: 2rem 1rem;
+    }
+}
+
+.highlight-box {
+    background-color: color-mix(in srgb, var(--primary-color) 70%, var(--accent-color) 30%);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+/* Button with mixed color on hover */
+button.special {
+    background-color: var(--secondary-color);
+    
+    &:hover {
+        background-color: color-mix(in srgb, var(--secondary-color), black 20%);
+    }
+}
+
+/* Wide gamut colors for modern displays */
+.wide-gamut-bg {
+    /* P3 color space - wider gamut than sRGB */
+    background-color: color(display-p3 0.2 0.5 0.8);
+    /* Fallback for older browsers */
+    background-color: rgb(51, 128, 204);
+}
+
+button[type="submit"] {
+    width: 100%;
+    /* USE WIDE GAMUT COLOR - P3 color space (richer blue) */
+    background: color(display-p3 0.2 0.6 0.95);
+    /* Fallback for browsers without P3 support */
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 1em;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
+    }
+}
+
+/* phone view */
+@media (max-width: 480px) {
+    html { font-size: 12px; }
+    header { min-height: 20dvh; }
+    nav ul { 
+        flex-direction: column; 
+        align-items: center;
+    }
+    header h1 {
+        font-size: 1.75rem;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    nav ul li a {
+        padding: 1rem 2rem;
+        display: block;
+    }
+}
+
+/* tablet view */
+@media (min-width: 481px) and (max-width: 1023px) {
+    html { font-size: 14px; }
+    header { min-height: 25dvh; }
+}
+
+body, html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+main a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+button, input[type="submit"], a {
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+p, li {
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+}
+
+section {
+    margin-bottom: var(--spacing-lg);
+}
+
+section:not(:last-child) {
+    padding-bottom: var(--spacing-md);
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+nav a[aria-current="page"] {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+img {
+    background-color: #f0f0f0; 
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--accent-color);
+}
+
+input:valid {
+    border-color: #27ae60; 
+}
+
+main > h1::before,
+main > h2:first-of-type::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+h1, h2, h3 {
+    text-wrap: balance;  
+}
+
+p {
+    text-wrap: pretty;  
+}
+
+dialog {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s, transform 0.3s, overlay 0.3s allow-discrete, display 0.3s allow-discrete;
+    
+    @starting-style {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+article {
+    opacity: 1;
+    transform: translateY(0);
+    
+    @starting-style {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}

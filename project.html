@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/project.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <h1>My Projects</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html" aria-current="page">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section>
+            <h2>Featured Projects</h2>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article>
+                    <h3>3D models</h3>
+                    <img src="image/Screenshot 2025-10-17 103850.png" 
+                         srcset="image/Screenshot 2025-10-17 103850.png 400w,
+                                 image/Screenshot 2025-10-17 103850.png 800w,
+                                 image/Screenshot 2025-10-17 103850.png 1200w"
+                         sizes="(max-width: 480px) 100vw,
+                                (max-width: 768px) 50vw,
+                                33vw"
+                         alt="3D bicycle model showing detailed mesh structure with colorful components"
+                         width="800"
+                         height="600"
+                         loading="lazy">
+                    <p>Automated <strong>3D model generation</strong> pipeline for creating game-ready assets.</p>
+                    <p><b>Technologies:</b> Blender, Maya, 3ds Max</p>
+                </article>
+    
+                <!-- Project 2 -->
+                <article class="comparison-layout">
+                    <h3>Low Light Image Enhancement</h3>
+                    
+                    <div class="image-comparison">
+                        <figure>
+                            <img src="image/Screenshot 2025-10-17 110149.png" 
+                                 srcset="image/Screenshot 2025-10-17 110149.png 400w,
+                                         image/Screenshot 2025-10-17 110149.png 800w,
+                                         image/Screenshot 2025-10-17 110149.png 1200w"
+                                 sizes="(max-width: 480px) 100vw,
+                                        (max-width: 768px) 50vw,
+                                        33vw"
+                                 alt="Dark cathedral interior showing poor visibility in low light conditions"
+                                 width="800"
+                                 height="600"
+                                 loading="lazy">
+                            <figcaption><strong>Before</strong></figcaption>
+                        </figure>
+                        
+                        <figure>
+                            <img src="image/Screenshot 2025-10-17 110214.png" 
+                                 srcset="image/Screenshot 2025-10-17 110214.png 400w,
+                                         image/Screenshot 2025-10-17 110214.png 800w,
+                                         image/Screenshot 2025-10-17 110214.png 1200w"
+                                 sizes="(max-width: 480px) 100vw,
+                                        (max-width: 768px) 50vw,
+                                        33vw"
+                                 alt="Enhanced cathedral interior with improved brightness and preserved architectural details"
+                                 width="800"
+                                 height="600"
+                                 loading="lazy">
+                            <figcaption><strong>After</strong></figcaption>
+                        </figure>
+                    </div>
+                    
+                    <p>Deep learning model for <strong>low light image enhancement</strong> using CNN architecture.</p>
+                    <p><b>Technologies:</b> PyTorch, Python, OpenCV</p>
+                </article>
+    
+                <!-- Project 3 -->
+                <article>
+                    <h3>Video reasoning</h3>
+                    <img src="image/download.jpg" 
+                         srcset="image/download.jpg 400w,
+                                 image/download.jpg 800w,
+                                 image/download.jpg 1200w"
+                         sizes="(max-width: 480px) 100vw,
+                                (max-width: 768px) 50vw,
+                                33vw"
+                         alt="Video analysis interface showing temporal reasoning results"
+                         width="800"
+                         height="600"
+                         loading="lazy">
+                    <p>AI system for <strong>video reasoning</strong> and temporal understanding.</p>
+                    <p><b>Technologies:</b> PyTorch, Python, Transformers</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: <a href="mailto:jingchengli33@gmail.com">My Email</a></p>
+        <p>&copy; 2025 Jingcheng Li. All rights reserved.</p>
+    </footer>
+
+    <noscript>
+        <p>JavaScript is disabled. Some interactive features may not work.</p>
+    </noscript>
+</body>
+</html>

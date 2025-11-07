@@ -1,0 +1,70 @@
+main {
+    max-width: 1000px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
+}
+
+
+.welcome-section {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-out;
+    
+    & h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+    
+    /* MODIFIED: This styles the new <a> tag */
+    & a.button-link {
+        display: inline-block;
+        text-decoration: none;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 1em 3em;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.05);
+            color: white; /* Keep text white on hover */
+        }
+    }
+}
+
+/* Featured projects on home */
+.featured-projects {
+    margin-top: var(--spacing-lg);
+    
+    & article {
+        background: var(--card-bg);
+        padding: var(--spacing-md);
+        border-radius: 0.5rem;
+        border: 2px solid #e0e0e0;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            border-color: var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    }
+}
+
+/* Custom info-box styling */
+info-box {
+    display: block;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 0.5rem;
+    font-style: italic;
+}
