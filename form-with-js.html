@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
     <title>Contact Form - With JavaScript</title>
     <link rel="stylesheet" href="styles/form-no-js.css">
     <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/view-transitions.css">
 </head>
 <body>
     <button id="theme-toggle" aria-label="Toggle dark mode">
         <span class="theme-icon">🌙</span>
     </button>
+
+    <nav class="form-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="form-no-js.html">Form (No JS)</a></li>
+            <li><a href="form-with-js.html" aria-current="page">Form (With JS)</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <h1>Contact Form</h1>
         

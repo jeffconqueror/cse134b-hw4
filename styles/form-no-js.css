@@ -276,3 +276,60 @@ textarea {
 .info-message:not(:empty) {
     display: block;
 }
+
+.form-nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.form-nav li {
+    padding: 0;
+}
+
+.form-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.form-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.form-nav a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+/* Responsive navigation */
+@media (max-width: 768px) {
+    .form-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .form-nav a {
+        padding: 0.75rem 2rem;
+        width: 200px;
+        text-align: center;
+    }
+}
