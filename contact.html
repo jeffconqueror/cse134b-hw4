@@ -6,8 +6,12 @@
     <title>Contact Me</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/theme.css">
 </head>
 <body>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+    </button>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <h1>Contact Me</h1>
@@ -59,5 +63,14 @@
     <footer>
         <p>&copy; 2025 Jingcheng Li</p>
     </footer>
+    <script src="theme.js"></script>
+    <noscript>
+        <style>
+            #theme-toggle { display: none; }
+        </style>
+        <p style="text-align: center; padding: 10px; color: #666;">
+            JavaScript is disabled. Cannot switch theme.
+        </p>
+    </noscript>
 </body>
 </html>

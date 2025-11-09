@@ -419,3 +419,7 @@ article {
         transform: translateY(30px);
     }
 }
+
+.container {
+    background-color: var(--card-bg);
+}

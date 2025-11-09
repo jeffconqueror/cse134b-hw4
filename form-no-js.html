@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <link rel="stylesheet" href="styles/form-no-js.css">
+    <link rel="stylesheet" href="styles/theme.css">
 </head>
 <body>
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+    </button>
     <div class="container">
         <h1>Contact Form</h1>
         
@@ -51,5 +55,14 @@
             <output id="info-output" class="info-message"></output>
         </form>
     </div>
+    <script src="theme.js"></script>
+    <noscript>
+        <style>
+            #theme-toggle { display: none; }
+        </style>
+        <p style="text-align: center; padding: 10px; color: #666;">
+            JavaScript is disabled. Cannot switch theme.
+        </p>
+    </noscript>
 </body>
 </html>
